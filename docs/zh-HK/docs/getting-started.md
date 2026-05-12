@@ -533,7 +533,7 @@ from longbridge.openapi import Config
 async def main() -> None:
     config = Config.from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN")
     # 指定 3 年後過期
-    new_token = config.refresh_access_token(expired_at=datetime.now() + timedelta(days=365 * 3))
+    new_token = await config.refresh_access_token_async(expired_at=datetime.now() + timedelta(days=365 * 3))
     print("新 Access Token：", new_token)
     # 用新 token 建立新 Config，或將其持久化為 LONGBRIDGE_ACCESS_TOKEN
     new_config = Config.from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", new_token)
