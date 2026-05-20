@@ -1,9 +1,9 @@
-import { watch } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useData } from 'vitepress'
 
 export function useLbDarkSync() {
   const { isDark } = useData()
-  watch(isDark, (dark) => {
-    document.documentElement.classList.toggle('lb-dark', dark)
-  }, { immediate: true })
+  const sync = (dark: boolean) => document.documentElement.classList.toggle('lb-dark', dark)
+  onMounted(() => sync(isDark.value))
+  watch(isDark, sync)
 }

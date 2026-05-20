@@ -1,477 +1,704 @@
-# Design System Inspired by Longbridge
+# Design System Inspired by Longbridge Developers
 
 ## 1. Visual Theme & Atmosphere
 
-Longbridge's design system embodies a **modern fintech aesthetic** with clean, professional lines and a forward-thinking digital-first approach. The visual language balances sophistication with accessibility, combining a deep navy foundation with vibrant cyan accents that evoke innovation, trust, and energy in financial markets. The design prioritizes clarity and efficiency, using ample whitespace and a restrained color palette to reduce cognitive load while maintaining visual interest through strategic use of gradients and layered depth effects. The overall atmosphere is professional yet approachable—designed for serious investors who appreciate cutting-edge technology and seamless user experiences.
+The Longbridge Developers design system embodies a modern, tech-forward aesthetic built for financial developers and API integrators. It combines clean minimalism with vibrant accent colors that convey innovation and precision. The visual language prioritizes clarity and efficiency, with generous whitespace and a carefully curated color palette that distinguishes interactive elements from informational content. The system balances professional sophistication with approachable warmth, making complex financial data and developer tools feel accessible and well-organized.
 
 **Key Characteristics**
-- Clean, minimalist aesthetic with strategic use of negative space
-- Deep navy (`#0F1729`) as the dominant dark anchor paired with cyan (`#00B8B8`) for dynamic accents
-- Modern sans-serif typography with clear hierarchy and generous spacing
-- Subtle elevation and glassmorphic effects for contemporary depth
-- High contrast for accessibility and readability
-- Playful yet professional tone through icon illustration and gradient overlays
-- Mobile-first responsive design optimized for trading workflows
+
+- Minimalist, developer-centric aesthetic with emphasis on clarity
+- Bright, energetic accent colors (turquoise and coral) against neutral foundations
+- Generous whitespace and breathing room between content zones
+- Crisp, high-contrast typography for scannability
+- Smooth, subtle interactions without unnecessary ornamentation
+- Cards and contained layouts as primary organizational pattern
+- Data-forward design that emphasizes information hierarchy
 
 ## 2. Color Palette & Roles
 
 ### Primary
-- **Longbridge Navy** (`#0F1729`): Primary background and text color for main UI surface; used across headers, navigation, and high-emphasis content
-- **Longbridge Dark** (`#0A0E19`): Darker variant for enhanced depth; used in overlay backgrounds and secondary surfaces
-- **Pure Black** (`#000000`): Maximum contrast for critical text and borders; used sparingly for headings and high-priority CTAs
+
+- **Brand Teal** (`#00ADA2`): Primary brand accent for headings, key features, and brand identity
+- **Teal Vibrant** (`#00F0C4`): Highlight and call-to-action accents for interactive elements
+- **Teal Secondary** (`#00B8B8`): Secondary brand accent for supporting UI elements
 
 ### Accent Colors
-- **Cyan Accent** (`#00B8B8`): Primary highlight and call-to-action indicator; draws attention to key market data, interactive elements, and feature highlights
-- **Sky Blue** (`#2A99FE`): Secondary accent for alternative actions and interactive states; used in charts, links, and supplementary CTAs
+
+- **Coral Pink** (`#F7415F`): Secondary accent for emphasis and highlighting alternative CTAs
+- **Coral Bright** (`#FF3A75`): Vibrant accent for interactive states and notifications
+- **Warm Orange** (`#FF9728`): Warning state indicator for cautionary messaging
 
 ### Interactive
-- **Error/Danger** (`#FF3A3A`): Loss indicators, error states, and critical warnings; primarily used for negative market movements and validation errors
-- **Warning Bright** (`#FF9D3A`): Medium-priority warnings and cautionary states; used for important notifications and attention-grabbing alerts
-- **Warning Medium** (`#FFBD3A`): Alternative warning tone for less critical alerts; used in secondary warning contexts
-- **Warning Light** (`#FFE13A`): Softest warning state for background highlights and low-priority notifications
+
+- **Error Red** (`#FF3A3A`): Error states, validation failures, and destructive actions
+- **Success Teal** (`#00B8B8`): Confirmation and success state indicators
 
 ### Neutral Scale
-- **Gray 900** (`#111827`): Dense text and borders; used for secondary headings and emphasized body copy
-- **Gray 600** (`#374151`): Medium-contrast text for supplementary information; used in descriptions and helper text
-- **Gray 500** (`#9CA3AF`): Light text for disabled states and tertiary information; used in form labels and placeholder text
-- **Gray 300** (`#D1D5DB`): Subtle dividers and border lines; used for section separators and form field borders
-- **Gray 200** (`#E5E7EB`): Light background tint and border; heavily used for input fields, dividers, and subtle surface variations
-- **Gray 100** (`#EAEBEC`): Barely perceptible background tint; used for very subtle backgrounds and hover states
-- **Off-White** (`#F8F9FA`): Near-white background for secondary sections and light surfaces
-- **Pure White** (`#FFFFFF`): Clean background and card surfaces; maximum contrast baseline
+
+- **Dark Navy** (`#0A0E19`): Darkest text and high-contrast backgrounds
+- **Dark Charcoal** (`#3C3C43`): Primary text color for body content
+- **Medium Gray** (`#82888D`): Secondary text for muted descriptions
+- **Light Gray** (`#9D9FA3`): Tertiary text for captions and meta information
 
 ### Surface & Borders
-- **Light Border** (`#C7CACC`): Subtle borders for form elements and container outlines
-- **Border Medium** (`#82888D`): Medium-weight borders for input fields and card separators
+
+- **Pure White** (`#FFFFFF`): Primary background for cards and content areas
+- **Off White** (`#F5F6F6`): Secondary background for subtle differentiation
+- **Pale Gray** (`#F3F5F6`): Tertiary background for stacked content
+- **Very Light Gray** (`#FAFAFA`): Minimal background variation
+- **Border Light** (`#EAEBEC`): Default border color for cards and dividers
+- **Jet Black** (`#000000`): Maximum contrast for critical elements
 
 ## 3. Typography Rules
 
 ### Font Family
-**Primary:** `Cera Pro` with fallback `serif` — used for display and heading hierarchy; conveys premium, confident brand personality  
-**Secondary:** `ui-sans-serif` (system font stack including `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `Helvetica Neue`, `Arial`, sans-serif) — used for body copy, buttons, and navigation; ensures optimal performance and platform consistency  
-**Tertiary:** `SF Pro Display` — used for large interactive elements and input fields; refined appearance on Apple devices
+
+**Primary:** Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif
+
+**Secondary/Code:** JetBrains Mono, ui-monospace, Menlo, Monaco, "Courier New", monospace
 
 ### Hierarchy
 
-| Role | Font | Size | Weight | Line Height | Letter Spacing | Notes |
-|------|------|------|--------|-------------|-----------------|-------|
-| Display 1 (H1) | Cera Pro | 48px | 700 | 48px | 0px | Page hero and major section headings; maximum impact and presence |
-| Heading 2 (H2) | ui-sans-serif | 48px | 600 | 48px | 0px | Large section headers; slightly less weight than Display for subordinate emphasis |
-| Heading 3 (H3) | SF Pro Display | 24px | 700 | 32px | 0px | Subsection headers and card titles; strong visual hierarchy |
-| Heading 4 (H4) | SF Pro Display | 18px | 700 | 28px | 0px | Minor section headers and prominent labels; maintains hierarchy depth |
-| Body Large | ui-sans-serif | 16px | 400 | 24px | 0px | Primary body copy for lists and main content blocks |
-| Body Regular | ui-sans-serif | 14px | 400 | 20px | 0px | Default body copy for paragraphs and descriptions; most common text role |
-| Button Text | ui-sans-serif | 16px | 500 | 20px | 0px | Call-to-action and interactive buttons; medium weight for emphasis |
-| Small/Caption | ui-sans-serif | 14px | 400 | 20px | 0px | Captions, helper text, and fine print; reduced size for secondary information |
-| Input Label | SF Pro Display | 20px | 400 | 28px | 0px | Large input fields and text entry areas; optimized for touch targets |
-| Code | Monospace (default system) | 12px | 400 | 16px | 0.5px | Code snippets and technical references; ensures proper character spacing |
+| Role            | Font           | Size   | Weight | Line Height | Letter Spacing | Notes                             |
+| --------------- | -------------- | ------ | ------ | ----------- | -------------- | --------------------------------- |
+| Display / H1    | Inter          | 72px   | 600    | 75.6px      | 0px            | Hero headlines, page titles       |
+| Heading / H2    | Inter          | 36px   | 600    | 39.6px      | 0px            | Section headings, major divisions |
+| Subheading / H3 | Inter          | 19px   | 700    | 23.75px     | 0px            | Card titles, feature headlines    |
+| Label / H5      | Inter          | 12px   | 600    | 24px        | 0px            | Section labels, badge text        |
+| Body Regular    | Inter          | 16px   | 400    | 27.2px      | 0px            | Primary body text, descriptions   |
+| Body Small      | Inter          | 13.5px | 400    | 24px        | 0px            | Secondary text, captions          |
+| Link / CTA      | Inter          | 15px   | 700    | 24px        | 0px            | Primary links and call-to-actions |
+| Button Text     | Inter          | 14px   | 500    | 20px        | 0px            | Button labels and inline actions  |
+| Code Inline     | JetBrains Mono | 11px   | 400    | 11px        | 0px            | Inline code snippets              |
+| Code Block      | JetBrains Mono | 12.5px | 400    | 19.375px    | 0px            | Code blocks and terminal output   |
+| Code Large      | ui-monospace   | 16px   | 400    | 24px        | 0px            | Large code blocks, command lines  |
 
 ### Principles
-- **Contrast First:** Every text element maintains sufficient contrast against its background to meet WCAG AA standards (minimum 4.5:1 for body, 3:1 for large text)
-- **Weight as Hierarchy:** Font weight differentiates importance—bold (700) for headlines, medium (600) for secondary headers, regular (400) for body copy
-- **Generous Line Height:** Line heights exceed font size by 25–67% to maximize readability and reduce eye strain, especially critical for financial data
-- **Serif + Sans Blend:** Premium Cera Pro headings paired with accessible system sans-serif creates visual distinction while maintaining performance
-- **Mobile Optimization:** All font sizes remain readable at 14px minimum; input fields use larger 20px for comfortable touch interaction
-- **Color Integration:** Font color closely follows semantic hierarchy—navy (`#0F1729`) for primary content, grays for secondary, cyan (`#00B8B8`) for interactive elements
+
+- Use weight 600+ for all headings to establish clear information hierarchy
+- Maintain consistent line-height ratios (1.05–1.7x font size) for readability
+- Reserve weight 700 for emphasis within body text and link destinations
+- Body text defaults to weight 400 for optimal legibility at 16px
+- Code uses monospace fonts exclusively for terminal, CLI, and technical contexts
+- All typography uses 0px letter spacing unless context requires additional clarity
 
 ## 4. Component Stylings
 
 ### Buttons
 
-**Primary Button (Full Width CTA)**
-- **Background:** `#000000` (solid black)
-- **Text Color:** `#FFFFFF` (pure white)
-- **Font Size:** `16px`
+**Button / Primary**
+
+- **Background:** `rgb(0, 0, 0)` (`#000000`)
+- **Text Color:** `rgb(255, 255, 255)` (`#FFFFFF`)
+- **Font Size:** `14px`
 - **Font Weight:** `500`
-- **Font Family:** `ui-sans-serif`
+- **Font Family:** Inter
 - **Padding:** `12px 24px`
-- **Border Radius:** `9999px` (fully rounded/pill shape)
-- **Border:** None (`1px solid transparent`)
-- **Box Shadow:** `rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.07) 0px 4px 16px 0px`
+- **Border Radius:** `999px`
+- **Border:** `none`
+- **Height:** `44px`
+- **Line Height:** `20px`
+- **Box Shadow:** `rgba(15, 17, 21, 0.04) 0px 1px 2px 0px, rgba(15, 17, 21, 0.04) 0px 0px 0px 1px`
+- **Hover State:** Background `rgb(40, 40, 40)`; Box Shadow `rgba(15, 17, 21, 0.08) 0px 2px 4px 0px`
+- **Active State:** Background `rgb(20, 20, 20)`
+
+**Button / Secondary**
+
+- **Background:** `rgb(243, 245, 246)` (`#F3F5F6`)
+- **Text Color:** `rgb(60, 60, 67)` (`#3C3C43`)
+- **Font Size:** `14px`
+- **Font Weight:** `500`
+- **Font Family:** Inter
+- **Padding:** `10px 20px`
+- **Border Radius:** `8px`
+- **Border:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
 - **Height:** `40px`
 - **Line Height:** `20px`
-- **Hover State:** Reduce opacity to `0.85`; increase shadow to `rgba(0, 0, 0, 0.12) 0px 6px 20px 0px`
-- **Active State:** Reduce opacity to `0.75`; maintain shadow
-- **Disabled State:** Opacity `0.5`; cursor not-allowed
+- **Box Shadow:** none
+- **Hover State:** Background `rgb(235, 237, 238)`; Border `1px solid rgb(220, 222, 224)`
+- **Active State:** Background `rgb(225, 227, 228)`
 
-**Secondary Button (Outline)**
-- **Background:** `rgba(210, 210, 210, 0.6)` (translucent light gray)
-- **Text Color:** `#0F1729` (navy)
+**Button / Ghost**
+
+- **Background:** `transparent`
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
+- **Font Size:** `14px`
+- **Font Weight:** `500`
+- **Font Family:** Inter
+- **Padding:** `8px 16px`
+- **Border Radius:** `8px`
+- **Border:** `1px solid transparent`
+- **Height:** `32px`
+- **Line Height:** `20px`
+- **Box Shadow:** none
+- **Hover State:** Background `rgba(0, 0, 0, 0.04)`; Border `1px solid rgb(234, 235, 236)`
+- **Active State:** Background `rgba(0, 0, 0, 0.08)`
+
+**Button / Icon**
+
+- **Background:** `transparent`
+- **Text Color:** `rgb(108, 110, 117)` (`#6C6E75`)
 - **Font Size:** `16px`
 - **Font Weight:** `400`
-- **Font Family:** `ui-sans-serif`
-- **Padding:** `8px 16px`
-- **Border Radius:** `30px`
-- **Border:** `1px solid rgba(0, 0, 0, 0.1)` (subtle dark border)
-- **Box Shadow:** `rgba(0, 0, 0, 0.07) 0px 4px 16px 0px`
-- **Height:** `40px`
+- **Font Family:** Inter
+- **Padding:** `8px`
+- **Border Radius:** `8px`
+- **Border:** `none`
+- **Height:** `32px`
+- **Width:** `32px`
 - **Line Height:** `24px`
-- **Hover State:** Background `rgba(210, 210, 210, 0.8)`; shadow `rgba(0, 0, 0, 0.1) 0px 6px 20px 0px`
-- **Active State:** Background `rgba(210, 210, 210, 1)`
-- **Disabled State:** Opacity `0.5`
-
-**Icon Button (Navigation)**
-- **Background:** `rgba(210, 210, 210, 0.6)`
-- **Text Color:** `#0F1729`
-- **Font Size:** `16px` or `14px` (depends on context)
-- **Font Weight:** `400` or `500`
-- **Font Family:** `ui-sans-serif`
-- **Padding:** `0px` (icon-only, no text padding)
-- **Border Radius:** `30px` (rounded pill)
-- **Border:** `1px solid rgba(0, 0, 0, 0.1)`
-- **Box Shadow:** `rgba(0, 0, 0, 0.07) 0px 4px 16px 0px`
-- **Width & Height:** `40px` (square/circular)
-- **Hover State:** Background `rgba(210, 210, 210, 0.8)`
-- **Active State:** Background `rgba(0, 0, 0, 0.1)`
+- **Box Shadow:** none
+- **Hover State:** Background `rgba(0, 0, 0, 0.04)`; Text Color `rgb(60, 60, 67)`
+- **Active State:** Background `rgba(0, 0, 0, 0.08)`
 
 ### Cards & Containers
 
-**Feature Card (Product Showcase)**
-- **Background:** Linear gradient from `#0A0E19` to `#1A2847` with opacity-layered cyan (`rgba(0, 184, 184, 0.1)`)
-- **Text Color:** `#FFFFFF` (white headings), `#E5E7EB` (body)
-- **Padding:** `24px` to `32px`
-- **Border Radius:** `16px` to `24px`
-- **Border:** `1px solid rgba(0, 184, 184, 0.2)` (subtle cyan border)
-- **Box Shadow:** `rgba(0, 0, 0, 0.2) 0px 8px 32px 0px`
-- **Hover State:** Border opacity increases to `0.3`; shadow becomes `rgba(0, 184, 184, 0.15) 0px 12px 40px 0px`
+**Card / Default**
 
-**Standard Card**
-- **Background:** `#FFFFFF` (pure white)
-- **Text Color:** `#0F1729` (navy)
-- **Padding:** `16px` to `24px`
-- **Border Radius:** `12px`
-- **Border:** `1px solid #E5E7EB` (light gray)
-- **Box Shadow:** `rgba(0, 0, 0, 0.05) 0px 2px 8px 0px`
-- **Hover State:** Shadow `rgba(0, 0, 0, 0.1) 0px 4px 16px 0px`
+- **Background:** `rgb(255, 255, 255)` (`#FFFFFF`)
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
+- **Font Size:** `16px`
+- **Font Weight:** `400`
+- **Font Family:** Inter
+- **Padding:** `28px 24px`
+- **Border Radius:** `16px`
+- **Border:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
+- **Box Shadow:** none
+- **Line Height:** `24px`
+- **Hover State:** Border `1px solid rgb(220, 222, 224)`; Box Shadow `0px 2px 8px rgba(0, 0, 0, 0.04)`
+
+**Card / Feature**
+
+- **Background:** `rgb(255, 255, 255)` (`#FFFFFF`)
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
+- **Font Size:** `16px`
+- **Font Weight:** `400`
+- **Font Family:** Inter
+- **Padding:** `24px`
+- **Border Radius:** `16px`
+- **Border:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
+- **Box Shadow:** none
+- **Line Height:** `24px`
+
+**Card / Badge Label**
+
+- **Background:** `transparent`
+- **Text Color:** `rgb(0, 184, 184)` (`#00B8B8`)
+- **Font Size:** `11.5px`
+- **Font Weight:** `700`
+- **Font Family:** Inter
+- **Padding:** `0px`
+- **Border Radius:** `0px`
+- **Border:** none
+- **Line Height:** `12px`
+- **Margin Bottom:** `14px`
+- **Use Case:** Category labels above card titles (e.g., "AI SKILL", "CLI")
 
 ### Inputs & Forms
 
-**Text Input Field**
-- **Background:** `rgba(0, 0, 0, 0)` (transparent) or `#F8F9FA` on white backgrounds
-- **Text Color:** `#FFFFFF` (white text on dark backgrounds) or `#0F1729` on light backgrounds
-- **Font Size:** `20px`
-- **Font Weight:** `400`
-- **Font Family:** `SF Pro Display`
-- **Padding:** `12px 16px`
-- **Border Radius:** `8px`
-- **Border:** `1px solid #E5E7EB` (light gray) or `rgba(229, 231, 235, 0.3)` (transparent variant)
-- **Box Shadow:** None (or `inset rgba(0, 0, 0, 0.02) 0px 1px 3px 0px` for subtle depth)
-- **Height:** `60px` (generous for touch interaction)
-- **Line Height:** `28px`
-- **Focus State:** Border `1px solid #00B8B8` (cyan); box shadow `inset rgba(0, 184, 184, 0.1) 0px 0px 0px 3px`
-- **Placeholder Text:** Color `#9CA3AF` (gray 500); opacity `0.7`
-- **Disabled State:** Background `#EAEBEC`; color `#9CA3AF`; cursor not-allowed
+**Input / Text Default**
 
-**Checkbox/Radio Input**
-- **Size:** `20px × 20px`
-- **Border:** `2px solid #E5E7EB`
-- **Border Radius:** `4px` (checkbox) or `50%` (radio)
-- **Background (unchecked):** `#FFFFFF`
-- **Background (checked):** `#00B8B8` (cyan)
-- **Checkmark/Dot Color:** `#FFFFFF`
-- **Focus State:** Box shadow `0px 0px 0px 3px rgba(0, 184, 184, 0.2)`
+- **Background:** `rgb(255, 255, 255)` (`#FFFFFF`)
+- **Text Color:** `rgb(60, 60, 67)` (`#3C3C43`)
+- **Font Size:** `14px`
+- **Font Weight:** `400`
+- **Font Family:** Inter
+- **Padding:** `10px 12px`
+- **Border Radius:** `8px`
+- **Border:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
+- **Height:** `36px`
+- **Line Height:** `20px`
+- **Box Shadow:** none
+- **Placeholder Color:** `rgb(130, 136, 141)` (`#82888D`)
+- **Focus State:** Border `1px solid rgb(0, 173, 162)` (`#00ADA2`); Box Shadow `0px 0px 0px 3px rgba(0, 173, 162, 0.1)`
+
+**Input / Search**
+
+- **Background:** `rgb(245, 246, 246)` (`#F5F6F6`)
+- **Text Color:** `rgb(60, 60, 67)` (`#3C3C43`)
+- **Font Size:** `14px`
+- **Font Weight:** `400`
+- **Font Family:** Inter
+- **Padding:** `10px 12px`
+- **Border Radius:** `8px`
+- **Border:** `1px solid transparent`
+- **Height:** `36px`
+- **Line Height:** `20px`
+- **Placeholder Color:** `rgb(130, 136, 141)` (`#82888D`)
+- **Focus State:** Border `1px solid rgb(0, 173, 162)` (`#00ADA2`)
 
 ### Navigation
 
-**Header Navigation Menu**
-- **Background:** `rgba(0, 0, 0, 0)` (transparent) or `#FFFFFF` with subtle border-bottom
-- **Text Color:** `#0F1729` (navy)
+**Navigation / Header**
+
+- **Background:** `color(srgb 1 1 1 / 0.8)` (semi-transparent white with backdrop blur)
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
 - **Font Size:** `16px`
 - **Font Weight:** `400`
-- **Font Family:** `ui-sans-serif`
-- **Height:** `40px` to `64px` (including padding)
-- **Padding:** `0px 16px` (horizontal), `12px 0px` (vertical)
-- **Border Radius:** `0px` (linear navigation)
-- **Border:** `1px solid #E5E7EB` (subtle bottom border on scroll)
-- **Box Shadow:** None (or `rgba(0, 0, 0, 0.04) 0px 2px 8px 0px` on scroll)
-- **Link Hover State:** Text color `#00B8B8` (cyan); underline appears
-- **Active Link:** Text color `#00B8B8`; underline `2px solid #00B8B8`
-- **Dropdown Trigger:** Icon rotates `180deg` on open
+- **Font Family:** Inter
+- **Padding:** `0px 24px`
+- **Border Radius:** `0px`
+- **Height:** `60px`
+- **Line Height:** `24px`
+- **Border Bottom:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
+- **Box Shadow:** none
+- **Backdrop Filter:** `blur(10px)`
 
-**Mobile Navigation (Hamburger Menu)**
-- **Icon Size:** `24px × 24px`
-- **Icon Color:** `#0F1729` (navy)
-- **Menu Background:** `#FFFFFF`
-- **Menu Item Padding:** `16px 20px`
-- **Menu Item Height:** `48px`
-- **Divider:** `1px solid #E5E7EB`
-- **Hover State:** Background `#F8F9FA`
+**Navigation / Link**
 
-### Links
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
+- **Font Size:** `15px`
+- **Font Weight:** `700`
+- **Font Family:** Inter
+- **Padding:** `0px 16px`
+- **Height:** `24px`
+- **Line Height:** `24px`
+- **Hover State:** Text Color `rgb(0, 173, 162)` (`#00ADA2`)
+- **Active State:** Text Color `rgb(0, 173, 162)` (`#00ADA2`); Border Bottom `2px solid rgb(0, 173, 162)`
 
-**Text Link (Body)**
-- **Color:** `#2A99FE` (sky blue) or `#00B8B8` (cyan for primary)
-- **Text Decoration:** None (underline on hover)
-- **Font Size:** `14px` to `16px`
-- **Font Weight:** `400`
-- **Hover State:** Text decoration `underline`; opacity `0.8`
-- **Visited State:** Color `#8B5CF6` (purple) if applicable
-- **Active State:** Color intensifies; underline remains
+**Navigation / Dropdown Trigger**
 
-**Navigation Link (Header)**
-- **Color:** `#0F1729` (navy, default)
-- **Font Size:** `16px`
-- **Font Weight:** `400`
-- **Padding:** `8px 0px`
-- **Hover State:** Color `#00B8B8` (cyan); underline `1px solid #00B8B8`
-- **Active State:** Color `#00B8B8`; underline persistent
+- **Background:** `transparent`
+- **Text Color:** `rgb(10, 14, 25)` (`#0A0E19`)
+- **Font Size:** `15px`
+- **Font Weight:** `500`
+- **Font Family:** Inter
+- **Padding:** `8px 12px`
+- **Border Radius:** `6px`
+- **Border:** none
+- **Height:** `32px`
+- **Line Height:** `24px`
+- **Hover State:** Background `rgba(0, 0, 0, 0.04)`
 
-### Badge & Status Indicators
+### Badges & Tags
 
-**Badge (Success/Active)**
-- **Background:** `rgba(0, 184, 184, 0.1)` (cyan tint)
-- **Text Color:** `#00B8B8` (cyan)
+**Badge / Inline**
+
+- **Background:** `rgb(245, 246, 246)` (`#F5F6F6`)
+- **Text Color:** `rgb(82, 88, 93)` (`#525C5D`)
 - **Font Size:** `12px`
 - **Font Weight:** `600`
+- **Font Family:** Inter
 - **Padding:** `4px 8px`
-- **Border Radius:** `9999px` (fully rounded)
-- **Border:** `1px solid #00B8B8`
+- **Border Radius:** `4px`
+- **Border:** `1px solid rgb(234, 235, 236)` (`#EAEBEC`)
+- **Line Height:** `16px`
 
-**Badge (Error)**
-- **Background:** `rgba(255, 58, 58, 0.1)` (red tint)
-- **Text Color:** `#FF3A3A` (error red)
-- **Font Size:** `12px`
-- **Font Weight:** `600`
-- **Padding:** `4px 8px`
-- **Border Radius:** `9999px`
-- **Border:** `1px solid #FF3A3A`
+**Badge / Status**
 
-**Badge (Warning)**
-- **Background:** `rgba(255, 157, 58, 0.1)` (orange tint)
-- **Text Color:** `#FF9D3A` (warning orange)
-- **Font Size:** `12px`
+- **Background:** `rgba(0, 173, 162, 0.1)` (teal with opacity)
+- **Text Color:** `rgb(0, 173, 162)` (`#00ADA2`)
+- **Font Size:** `11px`
 - **Font Weight:** `600`
+- **Font Family:** Inter
 - **Padding:** `4px 8px`
-- **Border Radius:** `9999px`
-- **Border:** `1px solid #FF9D3A`
+- **Border Radius:** `4px`
+- **Border:** none
+- **Line Height:** `16px`
 
 ## 5. Layout Principles
 
 ### Spacing System
-The design system uses an **8px base unit** with a modular scale to maintain visual rhythm and consistency across all components.
 
-- **Micro:** `4px` — Tightest spacing between icons and text; gap within compact button groups
-- **XS:** `8px` — Padding in buttons and form fields; gap between inline elements
-- **Small:** `12px` — Gap in form field groups; spacing around small badges
-- **Base:** `16px` — Standard padding for cards and containers; margin between sections
-- **Medium:** `20px` — Margin between major content blocks; padding on modal dialogs
-- **Large:** `24px` — Padding for primary sections; margin between page regions
-- **XL:** `32px` — Generous padding on hero sections; margin between major layout sections
-- **2XL:** `40px` — Spacing around page containers; margin above footer
-- **3XL:** `48px` — Large whitespace between feature sections
-- **4XL:** `56px` — Section break spacing on desktop
-- **5XL:** `60px` — Maximum breathing room between major content zones
+Base unit: `4px`
+
+**Scale with contexts:**
+
+- `4px`: Micro spacing within components (icon padding, tight gaps)
+- `8px`: Small gaps between inline elements
+- `12px`: Button label padding, form input padding
+- `16px`: Default component padding, standard gap between elements
+- `20px`: Card padding, section padding
+- `24px`: Card padding (default), container padding
+- `28px`: Large card padding, section separation
+- `32px`: Medium section gap, grid gutters
+- `36px`: Large margin between sections
+- `40px`: Extra-large margin for major section breaks
+- `48px`: Spacing between major content zones
+- `56px`: Maximum spacing for visual separation between distinct sections
 
 ### Grid & Container
-- **Max Width:** `1200px` to `1440px` for desktop content containers (varies by page section)
-- **Column Strategy:** 12-column grid system; cards and content blocks span 1–4 columns
-- **Gutter Width:** `24px` horizontal spacing between columns
-- **Container Padding:** `16px` (mobile), `24px` (tablet), `32px` (desktop) on all sides
-- **Section Patterns:**
-  - Hero sections: Full width with centered content within `1200px` max-width container
-  - Feature grids: Responsive 1–4 column layout using CSS Grid with auto-fit
-  - Feature cards: 4 columns on desktop, 2 on tablet, 1 on mobile
-  - Stacked content: Full width with internal max-width constraints
+
+- **Max Width:** `1200px` (for main content containers)
+- **Container Padding:** `24px` on desktop, `16px` on tablet, `12px` on mobile
+- **Grid Columns:** 12-column grid system
+- **Gutter:** `32px` (desktop), `24px` (tablet), `16px` (mobile)
+- **Feature Cards:** 3 columns on desktop (responsive to 2 on tablet, 1 on mobile)
+- **Section Patterns:** Hero full-width, features in grid, footer full-width
 
 ### Whitespace Philosophy
-The design system prioritizes **generous whitespace** to reduce cognitive load and draw focus to critical information. Every major section is surrounded by at least `32px` vertical spacing, with `48px` typical between page regions. Within cards, padding scales from `16px` (compact) to `32px` (expansive), ensuring content never feels cramped. Text lines benefit from `1.4–1.5x` font-size line heights, creating airy, scannable paragraphs. Horizontal spacing uses the same restraint—buttons rarely sit closer than `12px` apart, and form fields always maintain `16px` minimum gap to their labels.
+
+The design system embraces substantial whitespace to reduce cognitive load and emphasize content hierarchy. Large margins (48px+) separate major content sections, creating visual breathing room. Card-based layouts are separated by 32px gaps, allowing each element to occupy distinct visual territory. Within cards, 24–28px padding creates internal whitespace that prevents content crowding. Typography relies on line-height multiples (1.5–1.7x) rather than aggressive line-spacing, keeping text dense yet readable. The overall approach prioritizes clarity through space, not through visual noise.
 
 ### Border Radius Scale
-- **None:** `0px` — Linear elements like dividers and underlines
-- **Small:** `4px` — Subtle corner softening on input fields and small containers
-- **Medium:** `8px` — Standard radius for cards, modals, and standard containers
-- **Large:** `12px` — Prominent radius for feature cards and call-to-action sections
-- **XL:** `16px` to `24px` — Large container cards and hero backgrounds
-- **Full:** `9999px` — Buttons, badges, and circular icon containers; creates pill-shaped appearance
-- **Alternate:** `30px` — Secondary button radius; creates distinct rounded appearance between primary and secondary CTAs
-- **Alternative 2:** `23px` — Tertiary button variant; subtle variation in rounding
+
+- `4px`: Small badges, micro UI elements
+- `5px`: Variant radius for select components
+- `8px`: Buttons (secondary, ghost, icon), input fields, navigation dropdowns
+- `16px`: Cards, containers, feature sections
+- `20px`: Large button variants (when used)
+- `999px`: Fully rounded buttons (primary CTA, pill-shaped elements)
 
 ## 6. Depth & Elevation
 
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| **Flat (Level 0)** | No shadow; solid background | Base surfaces, dividers, input fields in neutral states |
-| **Raised (Level 1)** | `rgba(0, 0, 0, 0.04) 0px 2px 8px 0px` | Standard cards, buttons at rest, subtle elevation |
-| **Floating (Level 2)** | `rgba(0, 0, 0, 0.07) 0px 4px 16px 0px` | Interactive buttons, secondary cards, hover states |
-| **Elevated (Level 3)** | `rgba(0, 0, 0, 0.12) 0px 8px 24px 0px` | Modal overlays, dropdown menus, emphasized components |
-| **Peak (Level 4)** | `rgba(0, 0, 0, 0.16) 0px 12px 32px 0px` | Floating action buttons, top-layer modals, critical alerts |
-| **Inset Shadow** | `inset rgba(0, 0, 0, 0.04) 0px 2px 4px 0px` | Pressed button states, sunken text inputs |
-| **Glow (Feature Cards)** | `rgba(0, 184, 184, 0.15) 0px 8px 32px 0px` (cyan glow) | Feature showcase cards, premium card variants; draws attention through color-specific shadow |
+| Level             | Treatment                                                                    | Use                                           |
+| ----------------- | ---------------------------------------------------------------------------- | --------------------------------------------- |
+| **Flat (L0)**     | No shadow, `1px solid rgb(234, 235, 236)` border                             | Default cards, containers, neutral surfaces   |
+| **Raised (L1)**   | `0px 1px 2px rgba(15, 17, 21, 0.04), 0px 0px 0px 1px rgba(15, 17, 21, 0.04)` | Button hover, subtle elevation                |
+| **Elevated (L2)** | `0px 2px 8px rgba(0, 0, 0, 0.04), 0px 0px 0px 1px rgba(15, 17, 21, 0.04)`    | Card hover, dropdown menus, floating elements |
+| **High (L3)**     | `0px 4px 16px rgba(0, 0, 0, 0.08), 0px 0px 0px 1px rgba(15, 17, 21, 0.08)`   | Modals, tooltips, top-level overlays          |
+| **Modal (L4)**    | `0px 8px 32px rgba(0, 0, 0, 0.12)`                                           | Full-screen modals, critical overlays         |
 
-**Shadow Philosophy:**
-Longbridge's shadow system uses **layered, soft shadows** that increase in blur radius and distance with elevation, creating a subtle sense of height and interaction feedback. Shadows are predominantly neutral (`rgba(0, 0, 0, ...)`) for standard elevation, but critical interactive elements like feature cards use **cyan-tinted shadows** (`rgba(0, 184, 184, ...)`) to reinforce brand identity and draw focus. Inset shadows are reserved for **pressed/active states**, creating tactile feedback without raising elevation. The system avoids harsh, high-contrast shadows—all blur radii exceed `8px` to create smooth, diffused light falloff.
+**Shadow Philosophy:** The design system uses subtle, restrained shadows that enhance hierarchy without dominating the interface. All shadows employ low-opacity black (`rgba(15, 17, 21, 0.04–0.12)`) to maintain visual softness. Shadows increase with elevation level, creating a clear sense of layering. Most UI elements remain flat (L0) to preserve minimalist aesthetics; shadows are reserved for interactive states and floating containers that need clear separation from the background.
 
 ## 7. Do's and Don'ts
 
 ### Do
-- **Use cyan (`#00B8B8`) strategically** for interactive elements, links, and primary CTAs to create visual focus and guide user attention
-- **Maintain minimum `40px` height** for all interactive elements (buttons, inputs) to ensure comfortable touch targets on mobile devices
-- **Apply generous spacing (`24px` minimum)** between sections to create breathing room and improve content scanability
-- **Leverage the navy (`#0F1729`) and white contrast** for maximum readability and accessible text; ensure 4.5:1 contrast ratio on all body copy
-- **Use system fonts** (`ui-sans-serif`) for body and navigation to prioritize performance and platform consistency
-- **Combine icons with text** in buttons and navigation for clarity; avoid icon-only CTAs for critical actions without accompanying labels
-- **Apply subtle hover states** (shadow elevation + opacity changes) to provide clear interactive feedback
-- **Use error, warning, and success** colors (`#FF3A3A`, `#FF9D3A`, `#00B8B8`) exclusively for semantic purposes—never decorative
-- **Stack content vertically on mobile** and use responsive typography (scale down heading sizes on small screens)
-- **Include loading states** and disabled states with reduced opacity (`0.5`) and cursor changes (`not-allowed`)
+
+- **Use teal (`#00ADA2`) as primary accent** for all primary CTAs, brand highlights, and interactive states
+- **Maintain 24–28px padding in cards** to ensure content breathes and remains scannable
+- **Use weight 600+ for all headings** to establish clear visual hierarchy
+- **Pair primary buttons with pill-shaped radius (`999px`)** to emphasize primary actions
+- **Apply subtle shadows (L1–L2) only on hover and elevated states** to reduce cognitive load
+- **Use Inter font exclusively for UI text** for consistency and clarity
+- **Reserve coral pink (`#F7415F`) for secondary CTAs** to provide visual distinction
+- **Stack feature cards in 3-column grid** on desktop for balanced information layout
+- **Use badge labels (`#00B8B8` color) above card titles** to categorize and organize content
+- **Implement 40–48px vertical spacing** between major content sections for clear delineation
+- **Use monospace fonts (JetBrains Mono or ui-monospace) exclusively for code** to signal technical content
+- **Apply border color `#EAEBEC` to all card and input borders** for visual consistency
 
 ### Don't
-- **Don't use more than 2–3 accent colors** in a single view; restrict to cyan (`#00B8B8`) and sky blue (`#2A99FE`) to maintain visual coherence
-- **Don't create buttons smaller than `40px` height** or with padding less than `8px`; minimize touch target confusion
-- **Don't apply shadows stronger than Level 2** (`rgba(0, 0, 0, 0.07)`) to standard components; reserve Level 3+ for modals and critical overlays
-- **Don't use light gray text** (`#9CA3AF` or lighter) for primary body copy; reserve for disabled states, captions, and placeholder text only
-- **Don't mix font families** within a single component; stick to `ui-sans-serif` for navigation/buttons and `SF Pro Display` for large inputs
-- **Don't apply rounded corners** (`border-radius > 0`) to linear navigation elements; maintain `0px` radius for horizontal menu bars
-- **Don't use cyan or error colors** in text links unless specifically indicating interactive state or error condition
-- **Don't exceed `1440px` container max-width**; keep content scannable and prevent excessive line lengths
-- **Don't override button padding** arbitrarily; maintain `8px–16px` horizontal padding scale for consistency
-- **Don't animate non-interactive elements**; reserve transitions (200–300ms) for buttons, links, and form fields only
-- **Don't use background gradients** on static text or small components; reserve gradient overlays for feature cards and hero sections only
+
+- **Don't use shadows on default card state** — reserve shadows for hover and elevated states only
+- **Don't apply border radius > 16px to cards** — maintain professional appearance with controlled roundness
+- **Don't use opacity < 0.8 for text** — ensure all body text meets WCAG contrast ratios
+- **Don't mix serif and sans-serif fonts** in the same content area
+- **Don't place interactive elements without 8px minimum padding** — ensure touch targets remain accessible
+- **Don't use `#FF3A3A` (error red) for non-critical messaging** — reserve for validation failures and destructive actions
+- **Don't exceed 1200px container width** on desktop — maintain readability and visual balance
+- **Don't reduce font size below 12px** for body text (code is exception)
+- **Don't use full-opacity black (`#000000`) for body text** — use `#3C3C43` for softer, more accessible contrast
+- **Don't apply more than 1px borders** to UI elements — maintain crisp, minimal aesthetics
+- **Don't use more than 2 accent colors** in a single interface section
+- **Don't create custom button shapes** — stick to 8px, 16px, or 999px border radius values
 
 ## 8. Responsive Behavior
 
 ### Breakpoints
 
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| **Mobile** | `0px – 640px` | Single-column layout; `16px` container padding; font sizes reduce by 1–2px; button height remains `40px`; navigation collapses to hamburger menu |
-| **Tablet** | `641px – 1024px` | Two-column grid; `24px` container padding; feature cards display 2-up; font sizes remain stable; navigation remains horizontal with limited dropdown expansion |
-| **Desktop** | `1025px – 1440px` | Full 4-column grid or 3-column where applicable; `32px` container padding; all interactive elements at full size; navigation fully expanded; modals centered and constrained to `600px` max-width |
-| **Large Desktop** | `1441px+` | Max-width container (`1440px`) applied; center-aligned content; additional spacing around page edges |
+| Name        | Width         | Key Changes                                                                                                        |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Mobile**  | 320px–639px   | Single-column grid, 12px container padding, 16px gap between elements, font sizes reduced 10–12%, full-width cards |
+| **Tablet**  | 640px–1023px  | 2-column card grid, 16px container padding, 24px gap, 80% of desktop font sizes                                    |
+| **Desktop** | 1024px–1439px | 3-column card grid, 24px container padding, 32px gap, full typography scale                                        |
+| **Wide**    | 1440px+       | Max 1200px container width centered, 48px side padding, full spacing scale                                         |
 
 ### Touch Targets
-- **Minimum Size:** `40px × 40px` for all interactive elements (buttons, icon buttons, form fields)
-- **Minimum Spacing:** `12px` between adjacent interactive elements; `16px` preferred for comfortable thumb navigation
-- **Label Spacing:** Form labels must sit `8px` above input fields; labels must be at least `14px` font size for readability
-- **Link Tap Area:** Text links should include `8px` padding above/below to create comfortable tap zones
-- **Scrollable Lists:** List items must be minimum `44px` height; `56px` preferred for trading data and financial lists
+
+- **Minimum Height/Width:** `44px` for interactive elements (buttons, links, icon buttons)
+- **Minimum Padding:** `8px` on each side of button text
+- **Link Tap Area:** `36px` minimum height for text links
+- **Icon Button Size:** `32px` × `32px` minimum with `8px` internal padding
+- **Spacing Between Targets:** `8px` minimum to prevent accidental activation
 
 ### Collapsing Strategy
-- **Hero Headings:** H1 size reduces from `48px` (desktop) → `36px` (tablet) → `28px` (mobile); maintain `1:1` line height
-- **Body Copy:** Remains `14px–16px` across all breakpoints for optimal readability; never reduce below `12px`
-- **Buttons:** Height remains fixed at `40px` across all breakpoints; width adapts from fixed (`120px+`) on desktop to full-width on mobile with `16px` margins
-- **Navigation:** Desktop horizontal menu (`ui-sans-serif`, `16px`, full width) → Tablet compact menu (reduced padding, limited dropdown) → Mobile hamburger menu (full-screen overlay, stacked items)
-- **Feature Cards Grid:** Desktop 4-column (using CSS Grid `grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))`) → Tablet 2-column → Mobile single column (full width with `16px` margins)
-- **Spacing Collapse:** `32px` margins reduce to `24px` (tablet) and `16px` (mobile); maintain `8px` base unit consistency
-- **Form Fields:** Input height remains `60px` but width adapts from constrained (`400px` max) on desktop to full-width minus `32px` on mobile
-- **Modal Width:** Constrained to `600px` on desktop and tablet; full-width minus `16px` margins on mobile (max `100vw - 32px`)
 
-## 9. Implemented CSS Token Layer (`--lb-*`)
+- **Navigation:** Desktop horizontal menu → tablet dropdown menu → mobile hamburger menu at 640px
+- **Feature Cards:** 3 columns (desktop) → 2 columns (tablet) → 1 column (mobile)
+- **Padding:** 24px (desktop) → 16px (tablet) → 12px (mobile)
+- **Typography:** Full scale (desktop) → 90% scale (tablet) → 85% scale (mobile)
+- **Spacing Between Sections:** 48px (desktop) → 36px (tablet) → 24px (mobile)
+- **Container Width:** 100% width on mobile, constrained to 1200px on desktop
+- **Hero Section:** Full-width image + text stack on mobile, side-by-side on desktop
+- **Grid Gaps:** 32px (desktop) → 24px (tablet) → 16px (mobile)
+- **Modals:** Full-screen on mobile, centered with 16px margin on tablet/desktop
 
-All design decisions are encoded as CSS custom properties in `docs/.vitepress/theme/style/css-var.scss`. These tokens take precedence and should be referenced in all component styles.
+## 9. Agent Prompt Guide
 
-### Light Mode (`:root`)
+### Quick Color Reference (Light Mode)
 
-```scss
-/* Buttons */
---lb-btn-primary-bg: #000000;
---lb-btn-primary-color: #ffffff;
---lb-btn-primary-radius: 9999px;
---lb-btn-primary-h: 36px;
---lb-btn-primary-fs: 14px;
---lb-btn-primary-fw: 500;
---lb-btn-secondary-bg: rgba(210, 210, 210, 0.6);
---lb-btn-secondary-color: #374151;
---lb-btn-secondary-radius: 30px;
+- **Primary CTA:** Brand Teal (`#00ADA2`)
+- **Primary Button Background:** Jet Black (`#000000`)
+- **Secondary Button Background:** Pale Gray (`#F3F5F6`)
+- **Card Background:** Pure White (`#FFFFFF`)
+- **Card Border:** Border Light (`#ECEDEE`)
+- **Body Text:** Dark Charcoal (`#3C3C43`)
+- **Heading Text:** Dark Navy (`#0A0E19`)
+- **Secondary Text:** Medium Gray (`#67676C`)
+- **Tertiary Text:** Light Gray (`#929295`)
+- **Error State:** Error Red (`#FF3A3A`)
+- **Warning State:** Warm Orange (`#FF9728`)
+- **Success State:** Success Teal (`#00B8B8`)
+- **Accent Highlight:** Teal Vibrant (`#00F0C4`)
+- **Navigation Background:** Semi-transparent White (`rgba(255, 255, 255, 0.8)`)
+- **Link Hover / Brand:** Brand Teal (`#00ADA2`)
 
-/* Cards */
---lb-card-border: #e5e7eb;
---lb-card-radius: 12px;
---lb-card-shadow-1: rgba(0, 0, 0, 0.04) 0px 2px 8px;
---lb-card-shadow-2: rgba(0, 0, 0, 0.09) 0px 8px 24px;
+### Quick Color Reference (Dark Mode)
 
-/* Badge */
---lb-badge-fs: 12px;
---lb-badge-fw: 600;
---lb-badge-lh: 1;
---lb-badge-py: 4px;
---lb-badge-px: 8px;
---lb-badge-radius: 9999px;
-```
-
-### Dark Mode (`.dark`)
-
-```scss
---lb-btn-primary-bg: #ffffff;
---lb-btn-primary-color: #000000;
---lb-btn-secondary-bg: rgba(80, 80, 80, 0.5);
---lb-btn-secondary-color: #d1d5db;
---lb-card-border: rgba(255, 255, 255, 0.1);
-```
-
-### Component-Level Implementation Notes
-
-**Navigation Logo**
-- Light: `https://assets.wbrks.com/uploads/e76f6d93-.../longbridge-developers-light.png`
-- Dark: `https://assets.wbrks.com/uploads/37a18fa4-.../longbridge-developers-dark.png`
-- Width: `145px` via CSS (`.VPNavBarTitle .logo { width: 145px; height: auto; }` in `custom.scss`)
-- `siteTitle: false` in VitePress config to hide the text beside the logo
-
-**Hero CTA Buttons** (`NewHomePage/HeroSection.vue`)
-- Primary: black pill (`--lb-btn-primary-*`), hover opacity `0.82`
-- Secondary: gray pill (`--lb-btn-secondary-*`), hover gap widens from `0.375rem` to `0.625rem`
-
-**GetStarted Cards** (`NewHomePage/GetStarted.vue`)
-- Icon wrap: `40×40px`, `border-radius: 10px`, per-card color via inline CSS vars `--icon-color / --icon-bg / --icon-bg-dark`
-- Dark mode icon bg: `color-mix(in srgb, iconColor 15%, var(--vp-c-bg-soft))`
-- Hover: `box-shadow: var(--lb-card-shadow-2)` + `translateY(-3px)` — **no border color change**
-
-**OpenAPI SDK Bento Cards** (`NewHomePage/ProductOpenAPI.vue`)
-- Background: `var(--vp-c-bg)` — **no gray soft background**
-- Hover: lift + shadow only — **no border color change**
-
-**Skill Page Badge** (`Skill.vue`)
-- Filled pill: `background: color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent)`; text `var(--vp-c-brand-1)`
-- Uses `--lb-badge-*` tokens
-
-**Skill Chat Window Border**
-- Uses `--lb-card-border` (light: `#e5e7eb`, dark: `rgba(255,255,255,0.1)`)
-
-**Footer Spacing**
-- Homepage (`NewHomePage/Footer.vue`): `padding: 1.25rem 0 2.5rem` — extra bottom breathing room
-- Doc pages (`HomePage/Footer.vue`): `pt-4 pb-8 mt-6` — tighter top margin, generous bottom padding
-- `LayoutInner.vue` page-bottom slot: Footer skipped for `new-home-page` pageClass to avoid double footer
-
-**Pricing Badge**
-- `text-[12px] font-semibold px-2 py-1 rounded-full leading-none whitespace-nowrap`
-
-## 10. Agent Prompt Guide
-
-### Quick Color Reference
-- **Primary CTA:** Black (`#000000`) with white text
-- **Secondary CTA:** Light Gray (`#D2D2D2`) with Navy text (`#0F1729`)
-- **Accent & Focus:** Cyan (`#00B8B8`) — used for highlights, links, and interactive states
-- **Background (Dark):** Navy (`#0F1729`) — primary dark surface
-- **Background (Light):** White (`#FFFFFF`) — primary light surface
-- **Body Text:** Navy (`#0F1729`) on light backgrounds; White (`#FFFFFF`) on dark backgrounds
-- **Error State:** Red (`#FF3A3A`) — validation errors, negative market movement
-- **Warning State:** Orange (`#FF9D3A` or `#FFBD3A`) — alerts and cautionary content
-- **Heading Text:** Navy (`#0F1729`) or White (`#FFFFFF`) depending on background
-- **Disabled/Inactive:** Gray (`#9CA3AF`) text; opacity `0.5`
-- **Border:** Light Gray (`#E5E7EB`) — standard; Navy (`#0F1729`) at `0.1` opacity for subtle borders
+- **Page Background:** Dark Navy (`#0A0E19`)
+- **Surface / Elevated Background:** Dark Navy Deep (`#13182A`)
+- **Higher Elevation:** Dark Elevated (`#202127`)
+- **Alt Background:** Dark Alt (`#161A26`)
+- **Primary Button Background:** White (`#FFFFFF`) with Black text (`#000000`)
+- **Secondary Button Background:** `rgba(80, 80, 80, 0.5)` with light text (`#D1D5DB`)
+- **Card Background:** Dark Navy Deep (`#13182A`)
+- **Card Border:** Dark Border (`#3C3F44`)
+- **Body Text:** Warm Off-White (`#DFDFD6`)
+- **Secondary Text:** Muted Gray (`#98989F`)
+- **Tertiary Text:** Dim Gray (`#6A6A71`)
+- **Brand / Accent:** Bright Teal (`#00F0C4`)
+- **Secondary Brand:** Teal Mid (`#32EADC`)
+- **Divider:** `rgba(255, 255, 255, 0.06)`
+- **Navigation Background:** `rgba(10, 14, 25, 0.8)` with `saturate(1.8) blur(20px)`
 
 ### Iteration Guide
 
-1. **Always use `#0F1729` (Navy) as the primary text color on light backgrounds and `#FFFFFF` (White) on dark backgrounds.** This ensures maximum contrast and readability across all surfaces.
+1. **All typography uses Inter font family** except code blocks, which use JetBrains Mono or ui-monospace exclusively. Maintain exact px sizes from the hierarchy table.
 
-2. **Apply `#00B8B8` (Cyan) exclusively to interactive elements—links, focused inputs, primary buttons on secondary surfaces, and status indicators.** Never use cyan for decorative purposes.
+2. **Primary buttons must have 999px border radius** (fully rounded), black background / white text in light mode, white background / black text in dark mode. Padding `12px 24px`, height `44px`.
 
-3. **Set minimum touch target size to `40px × 40px` and maintain `12px` spacing between adjacent interactive elements.** Verify this applies to all buttons, icon buttons, form fields, and link hit areas.
+3. **Cards must have `1px solid #ECEDEE` border** (light) or `1px solid #3C3F44` (dark), `16px` border radius, `24–28px` padding. Background `#FFFFFF` light / `#13182A` dark. Apply L2 shadow only on hover.
 
-4. **Use `ui-sans-serif` for navigation, buttons, and body copy; `SF Pro Display` for large input fields (`20px`); `Cera Pro` for headings only.** Font consistency is critical for performance and brand recognition.
+4. **Navigation bar is semi-transparent** with backdrop blur. Light: `rgba(255,255,255,0.8)` + `saturate(1.8) blur(20px)`. Dark: `rgba(10,14,25,0.8)` + same blur. Border-bottom: `1px solid` divider color.
 
-5. **Apply `24px` to `32px` vertical spacing between major sections; `16px` within card components; `8px` between tightly-grouped elements.** Never drop below `8px` base unit spacing.
+5. **Feature cards in 3-column grid** (desktop, responsive to 2 columns tablet, 1 column mobile) with 32px gap. Each card contains a category label (`#00B8B8` light / `#00F0C4` dark, weight 700, 11.5px) above the title.
 
-6. **Set button padding to `8px 16px` for standard buttons, adjust to `12px 24px` for prominent CTAs, and use `0px` padding for icon-only buttons.** Maintain `40px` height across all button variants.
+6. **Spacing scale:** Use multiples of 4px (4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56). Standard section gap is 48px; card padding is 24px; button padding is 12px horizontal.
 
-7. **Use `border-radius: 9999px` for pill-shaped buttons and badges; `30px` for secondary buttons; `8px–12px` for cards; `0px` for linear navigation elements.** Radius communicates component type and hierarchy.
+7. **Input fields have `36px` height**, `10px 12px` padding, `8px` border radius, `1px solid #EAEBEC` border. Focus state adds `3px` teal outline (`rgba(0, 173, 162, 0.1)`).
 
-8. **Apply shadow elevation according to component type: Level 0 (none) for flat surfaces, Level 1 (`0px 2px 8px`) for standard cards, Level 2 (`0px 4px 16px`) for interactive states.** Use cyan-tinted shadows (`rgba(0, 184, 184, ...)`) only for feature showcase cards.
+8. **Shadows are subtle and restrained:** Use `rgba(15, 17, 21, 0.04)` for L1 (button hover), `rgba(0, 0, 0, 0.04)` for L2 (card hover), `rgba(0, 0, 0, 0.08)` for L3 (modals). Never apply shadows to flat (default) states.
 
-9. **Restrict headline sizes to: `48px` (H1), `48px` (H2), `24px` (H3), `18px` (H4) on desktop; reduce by 10–20% on tablet and mobile, never below `14px` for any heading.** Maintain proportional line heights (`1:1` for headings, `1.4–1.5x` for body).
+9. **Headings are always weight 600+:** H1 at 72px, H2 at 36px, H3 at 19px. Body text defaults to 16px weight 400. Links are 15px weight 700.
 
-10. **Test all components at `40px` minimum interactive height and verify `4.5:1` contrast ratio on body text.** Validate focus states include visible outlines or color changes; never remove outline on keyboard navigation.
+10. **Error/warning/success states:** Use `#FF3A3A` (error), `#FF9728` (warning), `#00B8B8` (success). Apply as text color with light background tint (10% opacity).
 
-11. **Use responsive breakpoints: mobile (`≤640px`), tablet (`641–1024px`), desktop (`1025–1440px`).** Stack layouts vertically on mobile, enable 2-column on tablet, use full 4-column grid on desktop.
+11. **Border radius hierarchy:** 4px for badges, 8px for buttons/inputs, 16px for cards, 999px for primary buttons only.
 
-12. **Implement loading, disabled, and error states for all form fields and buttons.** Disabled state: opacity `0.5`, cursor `not-allowed`; Error state: border `1px solid #FF3A3A`, text color `#FF3A3A`.
+12. **Accessibility priority:** All text must meet WCAG AA contrast (4.5:1). Use `#3C3C43` not black for body text in light mode; use `#DFDFD6` not pure white in dark mode. Minimum font size is 12px except for captions.
+
+---
+
+## 10. Dark Mode Design System
+
+The site supports full light/dark switching via a manual toggle (`.lb-dark` class on `<html>`). Dark mode is **not** a simple color inversion — it uses a distinct color system designed for low-light readability and the financial data context.
+
+### Dark Mode Surfaces
+
+Dark mode uses a layered surface system to communicate elevation without shadows:
+
+| Layer              | Token               | Value       | Use Case                                 |
+| ------------------ | ------------------- | ----------- | ---------------------------------------- |
+| **Page Base**      | `--lb-d-bg-1`       | `#0A0E19`   | Page background, sidebar, nav backdrop   |
+| **Elevated**       | `--vp-c-bg-soft`    | `#13182A`   | Cards, dropdowns, code blocks            |
+| **Higher Elev.**   | `--vp-c-bg-elv`     | `#202127`   | Modals, popovers, floating panels        |
+| **Alt Surface**    | `--vp-c-bg-alt`     | `#161A26`   | Table rows, alternate section backgrounds |
+| **AI Section BG**  | `--lb-ai-brand-bg`  | `#09252A`   | AI/Skill feature section background      |
+| **AI Card BG**     | `--lb-ai-card-bg`   | `#203A3F`   | Cards within AI feature sections         |
+
+### Dark Mode Text
+
+| Role          | Token              | Value      | Use Case                     |
+| ------------- | ------------------ | ---------- | ---------------------------- |
+| **Primary**   | `--vp-c-text-1`    | `#DFDFD6`  | Body text, headings          |
+| **Secondary** | `--vp-c-text-2`    | `#98989F`  | Captions, metadata           |
+| **Tertiary**  | `--vp-c-text-3`    | `#6A6A71`  | Placeholders, disabled text  |
+
+Note: Primary text is warm off-white (`#DFDFD6`), **not pure white**. Pure white is reserved for button labels and maximum-contrast elements only.
+
+### Dark Mode Brand Colors
+
+The brand teal becomes brighter in dark mode to maintain contrast against dark backgrounds:
+
+| Role                 | Light Mode  | Dark Mode   |
+| -------------------- | ----------- | ----------- |
+| **Brand Primary**    | `#00B8B8`   | `#00F0C4`   |
+| **Brand Secondary**  | `#1AC7C7`   | `#32EADC`   |
+| **Brand Tertiary**   | `#33CDCD`   | `#2ED4C7`   |
+
+### Dark Mode Borders & Dividers
+
+- **Border:** `#3C3F44` — used for card borders, input borders, table dividers
+- **Divider:** `rgba(255, 255, 255, 0.06)` — subtle separator lines between sections
+- **Focus ring:** `rgba(0, 240, 196, 0.15)` — teal with lower opacity for dark backgrounds
+
+### Dark Mode Buttons
+
+Primary button **inverts** in dark mode — white background with black text:
+
+**Button / Primary (Dark)**
+- **Background:** `#FFFFFF`
+- **Text Color:** `#000000`
+- **Border Radius:** `999px`
+- **Padding:** `12px 24px`
+- **Height:** `44px`
+- **Hover:** Background `#E8E8E8`
+
+**Button / Secondary (Dark)**
+- **Background:** `rgba(80, 80, 80, 0.5)`
+- **Text Color:** `#D1D5DB`
+- **Border Radius:** `8px`
+- **Border:** `1px solid rgba(255, 255, 255, 0.12)`
+- **Hover:** Background `rgba(80, 80, 80, 0.7)`
+
+**Button / Ghost (Dark)**
+- **Background:** `transparent`
+- **Text Color:** `#DFDFD6`
+- **Border:** `1px solid transparent`
+- **Hover:** Background `rgba(255, 255, 255, 0.06)`; Border `1px solid #3C3F44`
+
+### Dark Mode Cards
+
+**Card / Default (Dark)**
+- **Background:** `#13182A`
+- **Border:** `1px solid #3C3F44`
+- **Border Radius:** `16px`
+- **Padding:** `24–28px`
+- **Text:** `#DFDFD6`
+- **Hover:** Border `1px solid #4F5260`; subtle glow `0px 2px 8px rgba(0, 240, 196, 0.06)`
+
+### Dark Mode Navigation
+
+**Navigation / Header (Dark)**
+- **Background:** `rgba(10, 14, 25, 0.8)`
+- **Backdrop Filter:** `saturate(1.8) blur(20px)`
+- **Border Bottom:** `1px solid rgba(255, 255, 255, 0.06)`
+- **Text Color:** `#DFDFD6`
+- **Active Link:** `#00F0C4`
+
+### Dark Mode Docs Sidebar
+
+- **Background:** `#0A0E19` (same as page, no surface lift)
+- **Active Item Background:** `rgba(0, 240, 196, 0.08)`
+- **Active Item Text:** `#00F0C4`
+- **Inactive Item Text:** `#98989F`
+- **Section Heading:** `#6A6A71` (uppercase, weight 600, 11px)
+
+### AI / Skill Feature Section (Dark Treatment)
+
+The AI and Skill product sections use a special deep teal surface to create visual distinction:
+
+- **Section Background:** `#09252A` (deep dark teal)
+- **Card Background within Section:** `#203A3F`
+- **Accent / Link Color in Section:** `#00F0C4`
+- **Text on dark teal:** `#DFDFD6` (primary) / `#98989F` (secondary)
+- This treatment appears on the homepage AI Skill showcase and the `/skill` hero
+
+---
+
+## 11. Hero Section Patterns
+
+### Homepage Hero (Light Mode)
+
+The hero uses a **FlickeringGrid** canvas background with layered gradients:
+
+- **Canvas dot color:** `color(srgb 0.039 0.055 0.098 / 0.28)` — subtle dark navy dots on white
+- **Vignette layer:** `radial-gradient(55% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)` — center brightening
+- **Horizon fade:** `linear-gradient(to top, rgba(255,255,255,0.92) 0%, transparent 100%)` — fades to white at bottom
+- **Overall effect:** Light animated dot grid fading into clean white content area
+
+### Homepage Hero (Dark Mode)
+
+- **Page Background:** `#0A0E19` — solid dark navy, no gradient
+- **Canvas dot color:** lighter dots against dark background (same grid pattern, inverted contrast)
+- **Teal accent headline:** the second line of the H1 uses `#00F0C4` (bright brand teal)
+
+### Skill / Sub-page Hero
+
+- Same gradient/grid pattern as homepage hero
+- Title splits into **white** (first part) + **brand teal** (key phrase) in dark mode
+- `AI · SKILL` breadcrumb label above: teal dot + teal/muted text, 11px, weight 700
+
+### Pricing Hero
+
+- Same hero pattern with center-aligned layout
+- Title: bold black/white + teal colored emphasis phrase
+- No stat counters; leads directly into pricing cards below
+
+---
+
+## 12. Financial Data Colors
+
+Financial data display (quotes, P&L, price changes) uses a dedicated semantic color set distinct from the general UI palette:
+
+### Market Data Semantic Colors
+
+| State         | Token              | Light Value | Dark Value  | Use Case                          |
+| ------------- | ------------------ | ----------- | ----------- | --------------------------------- |
+| **Up / Gain** | `--up-color`       | `#00ADA2`   | `#00ADA2`   | Positive price change, portfolio gain |
+| **Down / Loss** | `--down-color`   | `#FF3A75`   | `#FF3A75`   | Negative price change, loss       |
+| **Neutral**   | `--vp-c-text-2`    | `#67676C`   | `#98989F`   | Unchanged price, flat indicators  |
+| **Warning**   | `--brand-color-3`  | `#FF9728`   | `#FF9728`   | Alert thresholds, cautionary data |
+
+### Usage Rules for Financial Data
+
+- **Up color (`#00ADA2`)** is used for positive percentage changes, green candles, portfolio gains. Use as text color; never as background.
+- **Down color (`#FF3A75`)** is a coral-pink (not red) to distinguish from error states (`#FF3A3A`). Use for negative changes, red candles, losses.
+- **Never use `#FF3A3A` (Error Red) for market losses** — it signals a system error, not a price direction.
+- Up/down colors are **identical in both light and dark modes** for consistency with financial convention.
+- For table cells, pair the color text with a very light tinted background: `rgba(0, 173, 162, 0.08)` (up) / `rgba(255, 58, 117, 0.08)` (down).
+
+---
+
+## 13. Design Token Reference
+
+The design system uses CSS custom properties with an `--lb-` prefix for project-specific tokens, layered on top of VitePress's `--vp-` token system.
+
+### Core Brand Tokens
+
+```css
+/* Light mode */
+--lb-brand: #00B8B8;          /* primary brand teal */
+--lb-brand-dark: #00ADA2;     /* darker brand teal for hover/active */
+--lb-bg-1: #FFFFFF;           /* primary background */
+--lb-bg-2: #F3F5F6;           /* secondary background */
+--lb-bg-btn-secondary: #F3F5F6;
+--lb-bg-chip: #F3F5F6;
+
+/* Dark mode (applied under .lb-dark) */
+--lb-d-bg-1: #0A0E19;         /* primary dark background */
+--lb-d-bg-2: #232630;         /* secondary dark background */
+--lb-ai-brand-bg: #09252A;    /* AI section dark teal background */
+--lb-ai-card-bg: #203A3F;     /* AI card dark teal */
+--lb-btn-primary-bg: #FFFFFF; /* dark mode: primary button is white */
+--lb-btn-primary-color: #000000;
+--lb-btn-secondary-bg: rgba(80, 80, 80, 0.5);
+--lb-btn-secondary-color: #D1D5DB;
+```
+
+### Brand Color Scale
+
+A full teal scale for gradient and tinted backgrounds:
+
+```css
+--brand-5:   #0f2f2a   /* darkest, near-black teal */
+--brand-10:  #123a34
+--brand-20:  #165049
+--brand-30:  #1a665e
+--brand-40:  #1e7c73
+--brand-50:  #229288
+--brand-60:  #26a89d
+--brand-70:  #2abeb2
+--brand-80:  #2ed4c7
+--brand-90:  #32eadc
+--brand-100: #00f0c4   /* brightest, used as dark-mode brand-1 */
+```
+
+### VitePress Semantic Tokens (Light / Dark)
+
+| Token               | Light         | Dark        | Role                    |
+| ------------------- | ------------- | ----------- | ----------------------- |
+| `--vp-c-bg`         | `#FFFFFF`     | `#0A0E19`   | Page background         |
+| `--vp-c-bg-soft`    | `#F6F6F7`     | `#13182A`   | Soft/card surface       |
+| `--vp-c-bg-elv`     | `#FFFFFF`     | `#202127`   | Elevated surface        |
+| `--vp-c-bg-alt`     | `#F6F6F7`     | `#161A26`   | Alt background          |
+| `--vp-c-text-1`     | `#3C3C43`     | `#DFDFD6`   | Primary text            |
+| `--vp-c-text-2`     | `#67676C`     | `#98989F`   | Secondary text          |
+| `--vp-c-text-3`     | `#929295`     | `#6A6A71`   | Tertiary text           |
+| `--vp-c-border`     | `#C2C2C4`     | `#3C3F44`   | Borders                 |
+| `--vp-c-divider`    | `rgba(0,0,0,.06)` | `rgba(255,255,255,.06)` | Dividers |
+| `--vp-c-brand-1`    | `#00B8B8`     | `#00F0C4`   | Primary brand color     |
+| `--vp-c-brand-2`    | `#1AC7C7`     | `#32EADC`   | Secondary brand         |
+| `--vp-c-brand-3`    | `#33CDCD`     | `#2ED4C7`   | Tertiary brand          |
+| `--vp-sidebar-bg-color` | `#FFFFFF` | `#0A0E19`   | Docs sidebar background |
