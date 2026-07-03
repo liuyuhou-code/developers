@@ -302,6 +302,34 @@ func main() {
       ],
       "total_amount": "0",
       "currency": "USD"
+    },
+    "multi_leg": {
+      "strategy": 2,
+      "strategy_name": "垂直策略",
+      "multileg_id": "Spread_QQQ20260731C764/767",
+      "code": "QQQ 260731 764/767 垂直策略",
+      "legs": [
+        {
+          "symbol": "QQQ260731C764000.US",
+          "side": "Buy",
+          "position": "LONG",
+          "ratio_quantity": "1",
+          "strike_price": "764",
+          "expire_date": "20260731",
+          "contract_direction": "C",
+          "contract_size": ""
+        },
+        {
+          "symbol": "QQQ260731C767000.US",
+          "side": "Sell",
+          "position": "SHORT",
+          "ratio_quantity": "1",
+          "strike_price": "767",
+          "expire_date": "20260731",
+          "contract_direction": "C",
+          "contract_size": ""
+        }
+      ]
     }
   }
 }
@@ -383,3 +411,17 @@ func main() {
 | ∟∟∟ limit_depth_level      | int32    | true     | 指定买卖档位         |
 | ∟∟∟ monitor_price          | string   | true     | 监控价格            |
 | ∟∟∟ trigger_count          | int32    | true     | 触发次数            |
+| multi_leg                  | object   | false    | 多腿策略信息，仅多腿期权组合订单返回，非组合订单不返回。 |
+| ∟ strategy                 | int32    | false    | 多腿策略<br/><br/> **可选值：**<br/> `0` - CoveredCall（股票担保）<br/> `1` - CoveredPut（股票担保）<br/> `2` - VerticalCallSpread（垂直策略）<br/> `3` - VerticalPutSpread（垂直策略）<br/> `4` - Collar（领式策略）<br/> `5` - Straddle（跨式策略）<br/> `6` - Strangle（宽跨式策略） |
+| ∟ strategy_name            | string   | false    | 策略名称            |
+| ∟ multileg_id              | string   | false    | 多腿组合 ID         |
+| ∟ code                     | string   | false    | 多腿组合代码         |
+| ∟ legs                     | object[] | false    | 组合订单的各腿       |
+| ∟∟ symbol                  | string   | false    | 期权 symbol，使用 `ticker.region` 格式，例如：`QQQ260731C764000.US` |
+| ∟∟ side                    | string   | false    | 买卖方向<br/><br/> **可选值：**<br/> `Buy`<br/> `Sell` |
+| ∟∟ position                | string   | false    | 持仓方向<br/><br/> **可选值：**<br/> `LONG`<br/> `SHORT` |
+| ∟∟ ratio_quantity          | string   | false    | 该腿比例数量         |
+| ∟∟ strike_price            | string   | false    | 行权价              |
+| ∟∟ expire_date             | string   | false    | 期权到期日，格式：`YYYYMMDD` |
+| ∟∟ contract_direction      | string   | false    | 合约类型<br/><br/> **可选值：**<br/> `C` - 看涨（Call）<br/> `P` - 看跌（Put） |
+| ∟∟ contract_size           | string   | false    | 合约乘数            |
