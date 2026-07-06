@@ -283,35 +283,7 @@ func main() {
         "remark": "",
         "limit_depth_level": 0,
         "monitor_price": "",
-        "trigger_count": 1,
-        "multi_leg": {
-          "strategy": 2,
-          "strategy_name": "Vertical spread",
-          "multileg_id": "Spread_QQQ20260731C764/767",
-          "code": "QQQ 260731 764/767 Vertical spread",
-          "legs": [
-            {
-              "symbol": "QQQ260731C764000.US",
-              "side": "Buy",
-              "position": "LONG",
-              "ratio_quantity": "1",
-              "strike_price": "764",
-              "expire_date": "20260731",
-              "contract_direction": "C",
-              "contract_size": ""
-            },
-            {
-              "symbol": "QQQ260731C767000.US",
-              "side": "Sell",
-              "position": "SHORT",
-              "ratio_quantity": "1",
-              "strike_price": "767",
-              "expire_date": "20260731",
-              "contract_direction": "C",
-              "contract_size": ""
-            }
-          ]
-        }
+        "trigger_count": 1
       }
     ]
   }
@@ -368,17 +340,3 @@ func main() {
 | ∟ limit_depth_level | int32    | true     | Specifies the bid/ask depth level                                                                                                                                                                                                                   |
 | ∟ monitor_price     | string   | true     | Monitoring price                                                                                                                                                                                                                                    |
 | ∟ trigger_count     | int32    | true     | Number of triggers                                                                                                                                                                                                                                  |
-| ∟ multi_leg           | object   | false    | Multi-leg strategy information. Only returned for multi-leg option combination orders; otherwise not returned.                                                                                                                                     |
-| ∟∟ strategy           | int32    | false    | Multi-leg strategy<br/><br/> **Enum Value:**<br/> `0` - CoveredCall (Covered stock)<br/> `1` - CoveredPut (Covered stock)<br/> `2` - VerticalCallSpread (Vertical spread)<br/> `3` - VerticalPutSpread (Vertical spread)<br/> `4` - Collar<br/> `5` - Straddle<br/> `6` - Strangle                                                                 |
-| ∟∟ strategy_name      | string   | false    | Strategy name                                                                                                                                                                                                                                       |
-| ∟∟ multileg_id        | string   | false    | Multi-leg combination ID                                                                                                                                                                                                                            |
-| ∟∟ code               | string   | false    | Multi-leg combination code                                                                                                                                                                                                                          |
-| ∟∟ legs               | object[] | false    | Legs of the combination order                                                                                                                                                                                                                       |
-| ∟∟∟ symbol            | string   | false    | Option symbol, use `ticker.region` format, example: `QQQ260731C764000.US`                                                                                                                                                                           |
-| ∟∟∟ side              | string   | false    | Order Side<br/><br/> **Enum Value:**<br/> `Buy`<br/> `Sell`                                                                                                                                                                                         |
-| ∟∟∟ position          | string   | false    | Position direction<br/><br/> **Enum Value:**<br/> `LONG`<br/> `SHORT`                                                                                                                                                                               |
-| ∟∟∟ ratio_quantity    | string   | false    | Leg ratio quantity                                                                                                                                                                                                                                  |
-| ∟∟∟ strike_price      | string   | false    | Strike price                                                                                                                                                                                                                                        |
-| ∟∟∟ expire_date       | string   | false    | Option expiry date, format: `YYYYMMDD`                                                                                                                                                                                                            |
-| ∟∟∟ contract_direction | string  | false    | Contract type<br/><br/> **Enum Value:**<br/> `C` - Call<br/> `P` - Put                                                                                                                                                                              |
-| ∟∟∟ contract_size     | string   | false    | Contract size                                                                                                                                                                                                                                       |
