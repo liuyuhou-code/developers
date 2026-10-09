@@ -26,7 +26,7 @@ headingLevel: 2
 
 <table className="http-basic">
 <tbody>
-<tr><td className="http-basic-key">HTTP Method</td><td>GET</td></tr>
+<tr><td className="http-basic-key">HTTP Method</td><td>POST</td></tr>
 <tr><td className="http-basic-key">HTTP URL</td><td>/v1/trade/estimate/multileg </td></tr>
 </tbody>
 </table>
@@ -47,6 +47,20 @@ headingLevel: 2
 | ∟ side             | string   | NO       | 該腿的買賣方向。<br/><br/>預留欄位，暫不使用。<br/><br/> **可選值：**<br/> `Buy` - 買入<br/> `Sell` - 賣出        |
 
 ### Request Example
+
+```json
+{
+  "side": "Buy",
+  "order_type": "LO",
+  "submitted_price": "1.5",
+  "submitted_quantity": "1",
+  "strategy": "VerticalCallSpread",
+  "legs": [
+    { "symbol": "QQQ260731C764000.US" },
+    { "symbol": "QQQ260731C767000.US" }
+  ]
+}
+```
 
 ## Response
 

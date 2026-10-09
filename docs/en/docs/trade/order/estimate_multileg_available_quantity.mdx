@@ -26,7 +26,7 @@ Constraints:
 
 <table className="http-basic">
 <tbody>
-<tr><td className="http-basic-key">HTTP Method</td><td>GET</td></tr>
+<tr><td className="http-basic-key">HTTP Method</td><td>POST</td></tr>
 <tr><td className="http-basic-key">HTTP URL</td><td>/v1/trade/estimate/multileg </td></tr>
 </tbody>
 </table>
@@ -47,6 +47,20 @@ Constraints:
 | ∟ side             | string   | NO       | Leg order side.<br/><br/>Reserved field, not in use for now.<br/><br/> **Enum Value:**<br/> `Buy`<br/> `Sell` |
 
 ### Request Example
+
+```json
+{
+  "side": "Buy",
+  "order_type": "LO",
+  "submitted_price": "1.5",
+  "submitted_quantity": "1",
+  "strategy": "VerticalCallSpread",
+  "legs": [
+    { "symbol": "QQQ260731C764000.US" },
+    { "symbol": "QQQ260731C767000.US" }
+  ]
+}
+```
 
 ## Response
 
