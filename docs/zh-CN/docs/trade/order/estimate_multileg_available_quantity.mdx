@@ -1,0 +1,96 @@
+---
+slug: estimate_multileg_available_quantity
+sidebar_position: 12
+title: 预估多腿期权可交易信息
+language_tabs: false
+toc_footers: []
+includes: []
+search: true
+highlight_theme: ''
+headingLevel: 2
+---
+
+该接口用于在提交多腿期权组合订单前，预估该组合策略的最大购买数量及保证金变化。
+
+限制条件：
+
+- 仅支持美股市场。
+- 所有腿必须属于同一标的。
+- 每条腿只能是期权或其正股。
+- 不允许重复腿（symbol 与买卖方向均相同）。
+- 所有腿的结算货币必须相同。
+
+<SDKLinks module="trade" klass="TradeContext" method="estimate_multileg_available_quantity" />
+
+## Request
+
+<table className="http-basic">
+<tbody>
+<tr><td className="http-basic-key">HTTP Method</td><td>GET</td></tr>
+<tr><td className="http-basic-key">HTTP URL</td><td>/v1/trade/estimate/multileg </td></tr>
+</tbody>
+</table>
+
+### Parameters
+
+> Content-Type: application/json; charset=utf-8
+
+| Name               | Type     | Required | Description                                                                                                                                                        |
+| ------------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| side               | string   | YES      | 组合买卖方向<br/><br/> **可选值：**<br/> `Buy` - 买入<br/> `Sell` - 卖出                                                                                           |
+| order_type         | string   | YES      | [订单类型](../trade-definition#ordertype)                                                                                                                          |
+| submitted_price    | string   | NO       | 预估下单价格，例如：`1.5`<br/><br/> `LO` 等限价类型订单必填                                                                                                         |
+| submitted_quantity | string   | YES      | 下单数量（组合数量），例如：`1`                                                                                                                                     |
+| strategy           | string   | YES      | 多腿策略<br/><br/> **可选值：**<br/> `CoveredCall` - 股票担保<br/> `CoveredPut` - 股票担保<br/> `VerticalCallSpread` - 垂直策略<br/> `VerticalPutSpread` - 垂直策略<br/> `Collar` - 领式策略<br/> `Straddle` - 跨式策略<br/> `Strangle` - 宽跨式策略<br/> `CalendarCallSpread` - 日历策略<br/> `CalendarPutSpread` - 日历策略 |
+| legs               | object[] | YES      | 组合的各腿                                                                                                                                                          |
+| ∟ symbol           | string   | YES      | 期权或正股 symbol，使用 `ticker.region` 格式，例如：`QQQ260731C764000.US`                                                                                          |
+| ∟ side             | string   | NO       | 该腿的买卖方向。<br/><br/>预留字段，暂不使用。<br/><br/> **可选值：**<br/> `Buy` - 买入<br/> `Sell` - 卖出        |
+
+### Request Example
+
+## Response
+
+### Response Headers
+
+- Content-Type: application/json
+
+### Response Example
+
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "max_open_qty": "10",
+    "unit_margin": "1500.00",
+    "initial_margin_change": "15000.00",
+    "maintenance_margin_change": "12000.00"
+  }
+}
+```
+
+### Response Status
+
+| Status | Description            | Schema                                                                                      |
+| ------ | ---------------------- | ------------------------------------------------------------------------------------------- |
+| 200    | 预估多腿期权可交易信息成功 | [estimate_multileg_available_quantity_rsp](#schemaestimate_multileg_available_quantity_rsp) |
+| 400    | 请求参数有误，查询失败   | None                                                                                        |
+
+<aside className="success">
+</aside>
+
+## Schemas
+
+### estimate_multileg_available_quantity_rsp
+
+<a id="schemaestimate_multileg_available_quantity_rsp"></a>
+<a id="schemaestimate_multileg_available_quantity_rsp"></a>
+
+预估多腿期权可交易信息
+
+| Name                      | Type   | Required | Description                              |
+| ------------------------- | ------ | -------- | ---------------------------------------- |
+| max_open_qty              | string | true     | 组合的最大可开仓数量                       |
+| unit_margin               | string | true     | 每单位组合所需的保证金                     |
+| initial_margin_change     | string | true     | 下单后初始保证金的变化量（下单后减去下单前） |
+| maintenance_margin_change | string | true     | 下单后维持保证金的变化量（下单后减去下单前） |

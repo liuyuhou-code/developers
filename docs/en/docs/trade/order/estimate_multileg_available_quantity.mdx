@@ -1,0 +1,96 @@
+---
+slug: estimate_multileg_available_quantity
+sidebar_position: 12
+title: Estimate Multi-leg Option Trading Info
+language_tabs: false
+toc_footers: []
+includes: []
+search: true
+highlight_theme: ''
+headingLevel: 2
+---
+
+This API is used to estimate the maximum purchase quantity and the margin impact of a multi-leg option combination strategy before submitting the order.
+
+Constraints:
+
+- Only the US market is supported.
+- All legs must share the same underlying.
+- Each leg must be an option or the underlying stock itself.
+- Duplicate legs (the same symbol with the same side) are not allowed.
+- All legs must share the same settlement currency.
+
+<SDKLinks module="trade" klass="TradeContext" method="estimate_multileg_available_quantity" />
+
+## Request
+
+<table className="http-basic">
+<tbody>
+<tr><td className="http-basic-key">HTTP Method</td><td>GET</td></tr>
+<tr><td className="http-basic-key">HTTP URL</td><td>/v1/trade/estimate/multileg </td></tr>
+</tbody>
+</table>
+
+### Parameters
+
+> Content-Type: application/json; charset=utf-8
+
+| Name               | Type     | Required | Description                                                                                                                                                        |
+| ------------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| side               | string   | YES      | Order side of the combination<br/><br/> **Enum Value:**<br/> `Buy`<br/> `Sell`                                                                                     |
+| order_type         | string   | YES      | [Order Type](../trade-definition#ordertype)                                                                                                                        |
+| submitted_price    | string   | NO       | Estimated order price, example: `1.5`<br/><br/> Required for limit order types such as `LO`                                                                        |
+| submitted_quantity | string   | YES      | Order quantity (number of combinations), example: `1`                                                                                                              |
+| strategy           | string   | YES      | Multi-leg strategy<br/><br/> **Enum Value:**<br/> `CoveredCall` - Covered stock<br/> `CoveredPut` - Covered stock<br/> `VerticalCallSpread` - Vertical spread<br/> `VerticalPutSpread` - Vertical spread<br/> `Collar` - Collar<br/> `Straddle` - Straddle<br/> `Strangle` - Strangle<br/> `CalendarCallSpread` - Calendar<br/> `CalendarPutSpread` - Calendar |
+| legs               | object[] | YES      | Legs of the combination                                                                                                                                            |
+| ∟ symbol           | string   | YES      | Option or underlying stock symbol, use `ticker.region` format, example: `QQQ260731C764000.US`                                                                      |
+| ∟ side             | string   | NO       | Leg order side.<br/><br/>Reserved field, not in use for now.<br/><br/> **Enum Value:**<br/> `Buy`<br/> `Sell` |
+
+### Request Example
+
+## Response
+
+### Response Headers
+
+- Content-Type: application/json
+
+### Response Example
+
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "max_open_qty": "10",
+    "unit_margin": "1500.00",
+    "initial_margin_change": "15000.00",
+    "maintenance_margin_change": "12000.00"
+  }
+}
+```
+
+### Response Status
+
+| Status | Description                                              | Schema                                                                                        |
+| ------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 200    | Estimate Multi-leg Option Trading Info Success           | [estimate_multileg_available_quantity_rsp](#schemaestimate_multileg_available_quantity_rsp)   |
+| 400    | The query failed with an error in the request parameter. | None                                                                                          |
+
+<aside className="success">
+</aside>
+
+## Schemas
+
+### estimate_multileg_available_quantity_rsp
+
+<a id="schemaestimate_multileg_available_quantity_rsp"></a>
+<a id="schemaestimate_multileg_available_quantity_rsp"></a>
+
+Estimated Multi-leg Option Trading Info
+
+| Name                      | Type   | Required | Description                                                                  |
+| ------------------------- | ------ | -------- | ---------------------------------------------------------------------------- |
+| max_open_qty              | string | true     | Maximum open quantity of the combination                                     |
+| unit_margin               | string | true     | Margin required per combination unit                                         |
+| initial_margin_change     | string | true     | Change of the initial margin after placing the order (after minus before)    |
+| maintenance_margin_change | string | true     | Change of the maintenance margin after placing the order (after minus before) |
