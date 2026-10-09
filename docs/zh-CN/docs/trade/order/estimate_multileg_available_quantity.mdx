@@ -20,6 +20,10 @@ headingLevel: 2
 - 不允许重复腿（symbol 与买卖方向均相同）。
 - 所有腿的结算货币必须相同。
 
+<CliCommand>
+longbridge estimate-multileg --side buy --strategy VerticalCallSpread --quantity 1 --leg QQQ260731C764000.US --leg QQQ260731C767000.US --price 1.5
+</CliCommand>
+
 <SDKLinks module="trade" klass="TradeContext" method="estimate_multileg_available_quantity" />
 
 ## Request
@@ -48,19 +52,247 @@ headingLevel: 2
 
 ### Request Example
 
-```json
-{
-  "side": "Buy",
-  "order_type": "LO",
-  "submitted_price": "1.5",
-  "submitted_quantity": "1",
-  "strategy": "VerticalCallSpread",
-  "legs": [
-    { "symbol": "QQQ260731C764000.US" },
-    { "symbol": "QQQ260731C767000.US" }
-  ]
+<Tabs groupId="request-example">
+  <TabItem value="python" label="Python" default>
+
+```python
+from decimal import Decimal
+from longbridge.openapi import TradeContext, Config, OrderType, OrderSide, MultiLegStrategy, OAuthBuilder
+
+oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
+config = Config.from_oauth(oauth)
+
+# Create a context for trade APIs
+ctx = TradeContext(config)
+
+# Estimate multi-leg option trading info
+resp = ctx.estimate_multileg_available_quantity(
+    OrderSide.Buy,
+    OrderType.LO,
+    Decimal(1),
+    MultiLegStrategy.VerticalCallSpread,
+    ["QQQ260731C764000.US", "QQQ260731C767000.US"],
+    submitted_price=Decimal("1.5"),
+)
+print(resp)
+```
+
+  </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+```python
+import asyncio
+from decimal import Decimal
+from longbridge.openapi import AsyncTradeContext, Config, OrderType, OrderSide, MultiLegStrategy, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
+    config = Config.from_oauth(oauth)
+
+    # Create a context for trade APIs
+    ctx = AsyncTradeContext.create(config)
+
+    # Estimate multi-leg option trading info
+    resp = await ctx.estimate_multileg_available_quantity(
+        OrderSide.Buy,
+        OrderType.LO,
+        Decimal(1),
+        MultiLegStrategy.VerticalCallSpread,
+        ["QQQ260731C764000.US", "QQQ260731C767000.US"],
+        submitted_price=Decimal("1.5"),
+    )
+    print(resp)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+  </TabItem>
+  <TabItem value="nodejs" label="Node.js">
+
+```javascript
+const { Config, TradeContext, Decimal, OrderType, OrderSide, MultiLegStrategy } = require('longbridge')
+
+const config = Config.fromEnv()
+const ctx = await TradeContext.new(config)
+const resp = await ctx.estimateMultilegAvailableQuantity({
+  side: OrderSide.Buy,
+  orderType: OrderType.LO,
+  submittedQuantity: new Decimal("1"),
+  strategy: MultiLegStrategy.VerticalCallSpread,
+  legs: [{ symbol: "QQQ260731C764000.US" }, { symbol: "QQQ260731C767000.US" }],
+  submittedPrice: new Decimal("1.5"),
+})
+console.log(resp.toString())
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import com.longbridge.*;
+import com.longbridge.trade.*;
+import java.math.BigDecimal;
+class Main {
+    public static void main(String[] args) throws Exception {
+        try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
+            EstimateMultiLegAvailableQuantityOptions opts = new EstimateMultiLegAvailableQuantityOptions(
+                    OrderSide.Buy,
+                    OrderType.LO,
+                    new BigDecimal("1"),
+                    MultiLegStrategy.VerticalCallSpread,
+                    new EstimateMultiLegOrderLeg[] {
+                        new EstimateMultiLegOrderLeg("QQQ260731C764000.US"),
+                        new EstimateMultiLegOrderLeg("QQQ260731C767000.US"),
+                    })
+                    .setSubmittedPrice(new BigDecimal("1.5"));
+            EstimateMultiLegAvailableQuantityResponse resp = ctx.estimateMultilegAvailableQuantity(opts).get();
+            System.out.println(resp);
+        }
+    }
 }
 ```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use std::sync::Arc;
+use longbridge::{oauth::OAuthBuilder, trade::{EstimateMultiLegAvailableQuantityOptions, EstimateMultiLegOrderLeg, MultiLegStrategy, OrderSide, OrderType, TradeContext}, Config, Decimal, decimal};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open this URL to authorize: {url}")).await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
+    let opts = EstimateMultiLegAvailableQuantityOptions::new(
+        OrderSide::Buy,
+        OrderType::LO,
+        decimal!(1i32),
+        MultiLegStrategy::VerticalCallSpread,
+        [
+            EstimateMultiLegOrderLeg::new("QQQ260731C764000.US"),
+            EstimateMultiLegOrderLeg::new("QQQ260731C767000.US"),
+        ],
+    )
+    .submitted_price(decimal!(1.5));
+    let resp = ctx.estimate_multileg_available_quantity(opts).await?;
+    println!("{:?}", resp);
+    Ok(())
+}
+```
+
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+
+```cpp
+#include <iostream>
+#include <longbridge.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longbridge;
+using namespace longbridge::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    EstimateMultiLegAvailableQuantityOptions opts{
+        OrderSide::Buy,
+        OrderType::LO,
+        Decimal("1"),
+        MultiLegStrategy::VerticalCallSpread,
+        { EstimateMultiLegOrderLeg{"QQQ260731C764000.US"}, EstimateMultiLegOrderLeg{"QQQ260731C767000.US"} },
+        Decimal("1.5"),
+    };
+    ctx.estimate_multileg_available_quantity(opts, [](auto res) {
+        if (!res) { std::cout << "failed" << std::endl; return; }
+        std::cout << "max_open_qty: " << res->max_open_qty << std::endl;
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"github.com/longbridge/openapi-go/config"
+	"github.com/longbridge/openapi-go/oauth"
+	"github.com/longbridge/openapi-go/trade"
+	"github.com/shopspring/decimal"
+)
+
+func main() {
+	o := oauth.New("your-client-id").
+		OnOpenURL(func(url string) { fmt.Println("Open this URL to authorize:", url) })
+	if err := o.Build(context.Background()); err != nil {
+		log.Fatal(err)
+	}
+	conf, err := config.New(config.WithOAuthClient(o))
+	if err != nil {
+		log.Fatal(err)
+	}
+	tctx, err := trade.NewFromCfg(conf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tctx.Close()
+	resp, err := tctx.EstimateMultiLegAvailableQuantity(context.Background(), &trade.GetEstimateMultiLegAvailableQuantity{
+		Side:              trade.OrderSideBuy,
+		OrderType:         trade.OrderTypeLO,
+		SubmittedQuantity: decimal.RequireFromString("1"),
+		Strategy:          trade.MultiLegStrategyVerticalCallSpread,
+		SubmittedPrice:    decimal.RequireFromString("1.5"),
+		Legs: []trade.EstimateMultiLegOrderLeg{
+			{Symbol: "QQQ260731C764000.US"},
+			{Symbol: "QQQ260731C767000.US"},
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(resp)
+}
+```
+
+  </TabItem>
+</Tabs>
 
 ## Response
 
